@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Route } from "react-router-dom"
-import Header from "./Header"
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import Form from 'react-bootstrap/Form'
+import FormControl from 'react-bootstrap/FormControl'
+import Button from 'react-bootstrap/Button'
 import './App.css';
 
 class App extends Component {
@@ -25,21 +27,21 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state)
+    console.log(this.state.joke)
   return (
     <>
-      {/* <Header /> */}
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="sm">
         <Navbar.Brand href="/">Chuck Norris</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="/Random">Random Joke</Nav.Link>
-            <Nav.Link href="/Create">Create</Nav.Link>
-            <Nav.Link href="/Read">Read</Nav.Link>
-            <Nav.Link href="/Update">Update</Nav.Link>
-            <Nav.Link href="/Delete">Delete</Nav.Link>
+            <Nav.Link href="/random">Random Joke</Nav.Link>
+            <Nav.Link href="/create">Create</Nav.Link>
           </Nav>
+          <Form inline>
+      <FormControl type="text" placeholder="Search by Id" className="mr-sm-2" />
+      <Button variant="outline-success">Search</Button>
+    </Form>
         </Navbar.Collapse>
       </Navbar>
     </>
