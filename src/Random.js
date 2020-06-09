@@ -22,11 +22,11 @@ export default class Random extends Component {
   }
 
   render() {
-    // console.log(this.state.joke)
+    console.log(this.state.joke)
     return (
       <Container>
         <Row xs={2} md={4} lg={6}>
-          <Col>ID: {this.state.joke.id}</Col>
+          <Col>Id: {this.state.joke.id}</Col>
           <Col>Category: {this.state.joke.categories}</Col>
         </Row>
         <Row>
