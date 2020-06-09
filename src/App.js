@@ -29,27 +29,27 @@ class App extends Component {
       <>
         <NavBar />
         <Route
-          path={"/"}
+          path="/"
           exact
           render={() => {
             return <Jokes jokes={this.state.joke} />;
           }}
         />
         <Route
-          path={"/random"}
+          path="/random"
           exact
           render={() => {
             return <Random />;
           }}
         />
         <Route
-          path={"/create"}
+          path="/create"
           render={() => {
             return <Create />;
           }}
         />
         <Route
-          path={"/joke/:id"}
+          path="/joke/:id"
           // exact
           render={(routerProps) => {
             // console.log(routerProps)
