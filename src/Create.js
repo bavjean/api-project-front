@@ -12,7 +12,7 @@ export default function Create() {
       joke: "",
     },
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      // alert(JSON.stringify(values, null, 2));
       axios({
         method: "post",
         url: "https://whispering-meadow-11234.herokuapp.com/jokes",
