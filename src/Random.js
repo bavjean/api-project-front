@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button"
+import { Link } from 'react-router-dom'
 
 export default class Random extends Component {
   constructor() {
@@ -22,16 +23,20 @@ export default class Random extends Component {
   }
 
   render() {
-    console.log(this.state.joke)
+    console.log(this.state.joke);
     return (
       <Container>
-        <Row xs={2} md={4} lg={6}>
-          <Col>Id: {this.state.joke.id}</Col>
-          <Col>Category: {this.state.joke.categories}</Col>
-        </Row>
-        <Row>
-          <Col>{this.state.joke.joke}</Col>
-        </Row>
+        <Card>
+          <Card.Body>
+            <Card.Title>{this.state.joke.id}</Card.Title>
+            <Card.Text>{this.state.joke.joke}</Card.Text>
+          </Card.Body>
+          <Link to={"/joke/" + this.state.joke.id}>
+            <Button variant="primary" type="submit">
+              Update
+            </Button>
+          </Link>
+        </Card>
       </Container>
     );
   }

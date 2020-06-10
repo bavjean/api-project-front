@@ -1,7 +1,6 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import Card from "react-bootstrap/Card"
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { useFormik } from "formik";
@@ -44,27 +43,26 @@ export default function Joke(props) {
   return (
     <div className="container">
       <Container>
-        <Row xs={2} md={4} lg={6}>
+        {/* <Row xs={2} md={4} lg={6}>
           <Col>Id: {props.id}</Col>
           <Col>Category: {props.categories}</Col>
         </Row>
         <Row>
           <Col>{props.joke}</Col>
-        </Row>
+        </Row> */}
+        <Card>
+                        <Card.Body>
+                        <Card.Title>{props.id}</Card.Title>
+                            <Card.Text>
+                                {props.joke}
+                            </Card.Text>
+                        </Card.Body>
+                    </Card>
       </Container>
       <Form onSubmit={formik.handleSubmit}>
-        <Form.Group controlId="id">
-          <Form.Label>Id</Form.Label>
-          <Form.Control
-            type="text"
-            placeholder={props.id}
-            onChange={formik.handleChange}
-            value={formik.values.id}
-          />
-        </Form.Group>
 
         <Form.Group controlId="joke">
-          <Form.Label>Joke</Form.Label>
+          <Form.Label>Update Joke</Form.Label>
           <Form.Control
             as="textarea"
             rows="3"
